@@ -20,7 +20,7 @@ $("#numeri-display p#numeri-output").text(
 );
 
 // Timer di 30 secondi
-var secondi = 5;
+var secondi = 30;
 
 var countdown30 = setInterval(function () {
   $("#countdown #secondi").text(secondi);
