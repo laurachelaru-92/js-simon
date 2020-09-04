@@ -11,18 +11,32 @@ while(arrayNrCasuali.length < 5) {
 }
 
 // Stampiamo in HTML il testo per l'utente
-$("#numeri-display p").text(
+$("#numeri-display p#numeri-output").text(
   arrayNrCasuali[0] + ", " +
   arrayNrCasuali[1] + ", " +
   arrayNrCasuali[2] + ", " +
   arrayNrCasuali[3] + ", " +
   arrayNrCasuali[4] + "."
 );
+
 // Parte un timer di 30 secondi
+var secondi = 30;
+var countdown30 = setInterval(function () {
+  $("#countdown #secondi").text(secondi);
+  if(secondi == 1) {
+    $("#secondi-rimanenti").text(" secondo rimanente");
+  } else if(secondi == 0) {
+    alert("fine");
+    clearInterval(countdown30);
+    $("#numeri-display").hide();
+    $("numeri-input").removeClass("display-none");  // Appare il box perché l'utente inserisca i numeri
+  }
+  secondi--;
+}, 1000);
 
-// Dopo 30 secondi, l'utente deve inserire i numeri
+// Dopo che l'utente avrà inserito i numeri e premuto "Controlla", controlliamo il risultato
 
-// Una volta inseriti, diciamo quanti sono stati indovinati
+// Diciamo all'utente quanti numeri ha indovinato
 
 }
 );

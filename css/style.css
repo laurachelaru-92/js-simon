@@ -4,6 +4,10 @@ margin: 0;
 padding: 0;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .wrapper {
   width: 80%;
   margin: auto;
@@ -11,15 +15,47 @@ padding: 0;
 }
 
 #numeri-display {
+  position: relative;
+  padding: 20px;
+  text-align: center;
   background-color: pink;
   color: black;
 }
 
-#numeri-display p {
+#numeri-display p#numeri-output {
+  display: inline-block;
+  padding: 10px;
+  margin: 10px;
+  border: 2px dotted violet;
+  border-radius: 10px;
   font-size: 20px;
+  font-weight: bold;
 }
 
 #countdown {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  border-radius: 10px;
   background-color: red;
   color: white;
+}
+
+#numeri-input {
+  text-align: center;
+  padding: 20px;
+}
+
+#numeri-input input {
+  /* display: inline-block; */
+  width: 100px;
+  padding: 5px;
+  margin: 0 10px;
+  border-radius: 5px;
+  box-shadow: none;
+}
+
+#numeri-input.display-none {
+
 }
