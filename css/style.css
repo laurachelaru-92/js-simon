@@ -4,7 +4,9 @@ margin: 0;
 padding: 0;
 }
 
-body {
+body,
+input[value],
+input[placeholder] {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -18,7 +20,7 @@ body {
   position: relative;
   padding: 20px;
   text-align: center;
-  background-color: pink;
+  background-color: lightpink;
   color: black;
 }
 
@@ -45,17 +47,33 @@ body {
 #numeri-input {
   text-align: center;
   padding: 20px;
+  border: 3px solid lightpink;
 }
 
-#numeri-input input {
-  /* display: inline-block; */
-  width: 100px;
+#numeri-input h2 {
+  margin-bottom: 10px;
+}
+
+#numeri-input input[type="number"] {
+  white-space: nowrap;
   padding: 5px;
-  margin: 0 10px;
+  margin: 10px 10px;
+  border: none;
+  border-bottom: 1px solid black;
+  box-shadow: 2px 2px 4px lightgrey;
+}
+
+#numeri-input input[type="submit"] {
+  display: block;
+  margin: auto;
+  padding: 10px;
   border-radius: 5px;
-  box-shadow: none;
+  background-color: lightgrey;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
 }
 
 #numeri-input.display-none {
-
+  display: none;
 }

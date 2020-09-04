@@ -20,22 +20,49 @@ $("#numeri-display p#numeri-output").text(
 );
 
 // Parte un timer di 30 secondi
-var secondi = 30;
+var secondi = 5;
 var countdown30 = setInterval(function () {
   $("#countdown #secondi").text(secondi);
   if(secondi == 1) {
     $("#secondi-rimanenti").text(" secondo rimanente");
   } else if(secondi == 0) {
-    alert("fine");
     clearInterval(countdown30);
     $("#numeri-display").hide();
-    $("numeri-input").removeClass("display-none");  // Appare il box perché l'utente inserisca i numeri
+    $("#numeri-input").removeClass("display-none");  // Appare il box perché l'utente inserisca i numeri
   }
   secondi--;
 }, 1000);
 
 // Dopo che l'utente avrà inserito i numeri e premuto "Controlla", controlliamo il risultato
 
+var numeriUtente = [];
+
+$("#controlla").click(
+  function() {
+    $("#numeri-input > .numero-inserito").each(
+      function() {
+        numeriUtente.push($(this).val());
+      }
+    );
+    var arrayGiuste = [];
+    var arraySbagliate = [];
+    for(var i = 0; i < numeriUtente.length; i++) {
+      if(arrayNrCasuali.includes(parseInt(numeriUtente[i]))) {
+        arrayGiuste.push(numeriUtente[i]);
+      } else {
+        arraySbagliate.push(numeriUtente[i]);
+      }
+    }
+    console.log("Numeri utente: " + numeriUtente);
+    console.log("Array giuste: " + arrayGiuste);
+    console.log("Array sbagliate: " + arraySbagliate);
+  }
+);
+
+// function checkNumbers(arrayNrCasuali, numeriUtente) {
+//
+//   return arrayGiuste, arraySbagliate;
+// }
 // Diciamo all'utente quanti numeri ha indovinato
 
 }
