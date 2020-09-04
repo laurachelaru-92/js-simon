@@ -4,6 +4,7 @@ margin: 0;
 padding: 0;
 }
 
+/* Generiche */
 body,
 input[value],
 input[placeholder] {
@@ -16,6 +17,12 @@ input[placeholder] {
   margin-top: 30px;
 }
 
+.display-none {
+  display: none;
+}
+/* / generiche */
+
+/* Display 5 numeri casuali */
 #numeri-display {
   position: relative;
   padding: 20px;
@@ -34,6 +41,7 @@ input[placeholder] {
   font-weight: bold;
 }
 
+/* Box di countdown */
 #countdown {
   position: absolute;
   top: 10px;
@@ -44,6 +52,7 @@ input[placeholder] {
   color: white;
 }
 
+/* Input numeri dell'utente */
 #numeri-input {
   text-align: center;
   padding: 20px;
@@ -63,6 +72,7 @@ input[placeholder] {
   box-shadow: 2px 2px 4px lightgrey;
 }
 
+/* Bottone submit */
 #numeri-input input[type="submit"] {
   display: block;
   margin: auto;
@@ -74,6 +84,10 @@ input[placeholder] {
   cursor: pointer;
 }
 
-#numeri-input.display-none {
-  display: none;
+/* Stampa risultato */
+#output-risultato {
+  background-color: lightblue;
+  text-align: center;
+  padding: 20px;
+  font-weight: bold;
 }

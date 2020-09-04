@@ -8,15 +8,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
+    <!-- Contenitore -->
     <div class="wrapper">
+      <!-- Display dei 5 numeri casuali -->
       <div id="numeri-display">
-        <h2>Memorizza questi numeri. Hai 30 secondi.</h2>
+        <h2>Memorizza questi numeri da 1 a 50. <br> Hai 30 secondi.</h2>
         <p id="numeri-output"></p>
+        <!-- Box di countdown -->
         <div id="countdown">
           <p id="secondi"></p>
           <p id="secondi-rimanenti"> secondi rimanenti</p>
         </div>
+        <!-- / box di countdown -->
       </div>
+      <!-- / display dei 5 numeri casuali -->
+      <!-- Input numeri da parte dell'utente -->
       <div id="numeri-input" class="display-none">
         <h2>Inserisci i 5 numeri:</h2>
         <input type="number" placeholder="primo numero" class="numero-inserito">
@@ -26,7 +32,14 @@
         <input type="number" placeholder="quinto numero" class="numero-inserito">
         <input type="submit" value="Controlla" id="controlla">
       </div>
+      <!-- / input numeri da parte dell'utente -->
+      <!-- Stampa risultato -->
+      <div id="output-risultato" class="display-none">
+        <p></p>
+      </div>
+      <!-- / stampa risultato -->
     </div>
+    <!-- / contenitore -->
     <script src="js/script.js" charset="utf-8"></script>
   </body>
 </html>
