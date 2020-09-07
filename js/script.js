@@ -11,13 +11,7 @@ while(arrayNrCasuali.length < 5) {
 }
 
 // Stampiamo in HTML i numeri
-$("#numeri-display p#numeri-output").text(
-  arrayNrCasuali[0] + ", " +
-  arrayNrCasuali[1] + ", " +
-  arrayNrCasuali[2] + ", " +
-  arrayNrCasuali[3] + ", " +
-  arrayNrCasuali[4] + "."
-);
+$("#numeri-display p#numeri-output").text(arrayNrCasuali.join(", "));
 
 // Timer di 30 secondi
 var secondi = 30;
