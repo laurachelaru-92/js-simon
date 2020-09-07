@@ -14,7 +14,7 @@ while(arrayNrCasuali.length < 5) {
 $("#numeri-display p#numeri-output").text(arrayNrCasuali.join(", "));
 
 // Timer di 30 secondi
-var secondi = 30;
+var secondi = 5;
 
 var countdown30 = setInterval(function () {
   $("#countdown #secondi").text(secondi);
@@ -44,7 +44,7 @@ $("#controlla").click(
       }
     );
     for(var i = 0; i < numeriUtente.length; i++) {   // Iteriamo nell'array dei numeri inseriti e verifichiamo quali sono azzeccati
-      if(arrayNrCasuali.includes(parseInt(numeriUtente[i]))) {
+      if(arrayNrCasuali.includes(parseInt(numeriUtente[i])) && arrayGiuste.includes(numeriUtente[i]) == false) {
         arrayGiuste.push(numeriUtente[i]);   // I numeri giusti vengono inseriti nell'array arrayGiuste
       }
     }
