@@ -14,7 +14,7 @@ while(arrayNrCasuali.length < 5) {
 $("#numeri-display p#numeri-output").text(arrayNrCasuali.join(", "));
 
 // Timer di 30 secondi
-var secondi = 5;
+var secondi = 30;
 
 var countdown30 = setInterval(function () {
   $("#countdown #secondi").text(secondi);
@@ -43,12 +43,15 @@ $("#controlla").click(
         numeriUtente.push($(this).val());  // Leggiamo il valore degli input inseriti dall'utente
       }
     );
-    for(var i = 0; i < numeriUtente.length; i++) {   // Iteriamo nell'array dei numeri inseriti e verifichiamo quali sono azzeccati
+     // Iteriamo nell'array dei numeri inseriti e verifichiamo quali sono azzeccati
+     // Controlliamo anche che l'utente non inserisca 5 volte lo stesso numero giusto
+    for(var i = 0; i < numeriUtente.length; i++) {
       if(arrayNrCasuali.includes(parseInt(numeriUtente[i])) && arrayGiuste.includes(numeriUtente[i]) == false) {
         arrayGiuste.push(numeriUtente[i]);   // I numeri giusti vengono inseriti nell'array arrayGiuste
       }
     }
-    console.log("Numeri utente: " + numeriUtente);  // Un plus, in console stampiamo i 2 array
+    console.log("Numeri casuali generati: " + arrayNrCasuali) // Un plus, in console stampiamo i 3 array
+    console.log("Numeri utente: " + numeriUtente);
     console.log("Array giuste: " + arrayGiuste);
     $("#numeri-input > .numero-inserito").val("");  // Puliamo gli input perché siano pronti per il prossimo round!
     stampaRisultato();   // Calcoliamo il risultato con lo switch (vedi sotto)
