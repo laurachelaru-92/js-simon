@@ -32,8 +32,6 @@ var countdown30 = setInterval(function () {
 var numeriUtente = [];
 var arrayGiuste = [];
 
-// Qui scriveremo il nostro risultato
-var risultato = "";
 
 // Al click su "controlla" parte il controllo e viene stampato il risultato
 $("#controlla").click(
@@ -54,15 +52,16 @@ $("#controlla").click(
     console.log("Numeri utente: " + numeriUtente);
     console.log("Array giuste: " + arrayGiuste);
     $("#numeri-input > .numero-inserito").val("");  // Puliamo gli input perché siano pronti per il prossimo round!
-    stampaRisultato();   // Calcoliamo il risultato con lo switch (vedi sotto)
+    var nostroRisultato = stampaRisultato(arrayGiuste);   // Calcoliamo il risultato con lo switch (vedi sotto)
     $("#output-risultato").removeClass("display-none");  // Appare il box con il risultato
-    $("#output-risultato p").text(risultato);
+    $("#output-risultato p").text(nostroRisultato);
   }
 );
 
 // Funzione di assegnazione del risultato
-function stampaRisultato() {
-  switch (arrayGiuste.length) {
+function stampaRisultato(arrayGenerico) {
+  var risultato = "";
+  switch (arrayGenerico.length) {
     case 5:
       risultato = "5 giusti! Sei un fenomeno!";
       break;
